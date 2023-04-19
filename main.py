@@ -2,7 +2,7 @@
 import math
 import sys
 from logging import error
-from os import name
+from os import name, environ
 from pathlib import Path
 from subprocess import Popen
 
@@ -23,6 +23,8 @@ from video_creation.final_video import make_final_video
 from video_creation.screenshot_downloader import get_screenshots_of_reddit_posts
 from video_creation.voices import save_text_to_mp3
 from utils.ffmpeg_install import ffmpeg_install
+
+environ["TOKENIZERS_PARALLELISM"] = "false"
 
 __VERSION__ = "3.1"
 
